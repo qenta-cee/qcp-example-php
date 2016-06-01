@@ -1,0 +1,18 @@
+2014-04-10 09:22:43 The checkout process has been successfully finished.
+  Wirecard Checkout Page returned the following response parameters:
+  amount = 99.99
+  currency = EUR
+  paymentType = TRUSTLY
+  financialInstitution = TRUSTLY
+  language = en
+  orderNumber = 6608774
+  paymentState = SUCCESS
+  shopname_customParameter1 = your first custom parameter
+  shopname_customParameter2 = your second custom parameter
+  gatewayReferenceNumber = DGW_6608774_RN
+  gatewayContractNumber = DemoContractNumber123
+  avsResponseCode = X
+  avsResponseMessage = Demo AVS ResultMessage
+  responseFingerprintOrder = amount,currency,paymentType,financialInstitution,language,orderNumber,paymentState,shopname_customParameter1,shopname_customParameter2,gatewayReferenceNumber,gatewayContractNumber,avsResponseCode,avsResponseMessage,secret,responseFingerprintOrder
+  responseFingerprint = 6e1bb046e7d03e2d105c7bce4009e406
+
