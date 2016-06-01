@@ -5,7 +5,7 @@
 
 An example implementation for Wirecard Checkout Page in PHP.
 
-The offered example is ment to help understanding the integration principle of Wirecard Checkout Page and help with integrating into PHP-based systems since the example code can also be used as a basis and adapted.
+This example demonstrates the integration principle of Wirecard Checkout Page and provides a basis for integration into PHP-based systems.
 
 Wirecard Checkout Page is the perfectly suited payment page for your online shop as it supports all popular payment methods. Offering an intuitive user interface, your consumers can conveniently select their preferred payment method and effect their payments in real time while respecting all security standards.
 
