@@ -54,5 +54,5 @@ $paymentTypes["QUICK"] = "@Quick";
 $paymentTypes["SEPA-DD"] = "SEPA Direct Debit";
 $paymentTypes["SKRILLDIRECT"] = "Skrill Direct";
 $paymentTypes["SKRILLWALLET"] = "Skrill Digital Wallet";
-$paymentTypes["SOFORTUEBERWEISUNG "] = "sofort.com";
+$paymentTypes["SOFORTUEBERWEISUNG"] = "sofort.com";
 $paymentTypes["TRUSTLY"] = "Trustly";
