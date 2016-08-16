@@ -1,6 +1,6 @@
 # Wirecard Checkout Page integration example
 
-[![License](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/wirecard/wcp-example-code/master/LICENSE)
+[![License](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/wirecard/wcp-example-php/master/LICENSE)
 [![PHP v5.3](https://img.shields.io/badge/php-v5.3-yellow.svg)](http://www.php.net)
 
 An example implementation for Wirecard Checkout Page in PHP.
