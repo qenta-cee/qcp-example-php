@@ -34,23 +34,50 @@ $requestParameters["duplicateRequestCheck"] = "no";
 $requestParameters["successUrl"] = getBaseUrl() . "return.php#success";
 $requestParameters["cancelUrl"] = getBaseUrl() . "return.php#cancel";
 $requestParameters["failureUrl"] = getBaseUrl() . "return.php#failure";
+$requestParameters['confirmUrl'] = "https://postb.in/1595340070567-0598925289232";
 $requestParameters["pendingUrl"] = getBaseUrl() . "return.php#pending";
 $requestParameters["serviceUrl"] = getBaseUrl() . "service.html";
 
+$requestParameters['isoTransactionType'] = '01';
+$requestParameters['consumerAuthenticationMethod'] = '02';
+$requestParameters['consumerAuthenticationTimestamp'] = date('c');
+$requestParameters['consumerCardProvisionDate'] = '20.12.2019';
+$requestParameters['consumerCardProvisionAttemptsPastDay'] = 3;
+$requestParameters['consumerChallengeIndicator'] = '01';
+$requestParameters['consumerSuspiciousActivity'] = 'yes';
+$requestParameters['consumerDeliveryTimeframe'] = '02';
+$requestParameters['consumerPreorderDate'] = '21.11.2020';
+$requestParameters['consumerReorderItems'] = '01';
+
+$requestParameters['consumerAccountCreationDate'] = '22.11.2019';
+$requestParameters['consumerAccountPasswordChangeDate'] = '22.12.2019';
+$requestParameters['consumerAccountPurchasesPastSixMonths'] = 33;
+$requestParameters['consumerAccountTransactionsPastDay'] = 22;
+$requestParameters['consumerAccountTransactionsPastYear'] = 222;
+$requestParameters['consumerAccountUpdateDate'] = '22.12.2029';
+
+$requestParameters['consumerBillingMobilePhone'] = '012345678999';
+$requestParameters['consumerBillingAddress3'] = 'None 11';
+
+$requestParameters['consumerShippingItemAvailability'] = '02';
+$requestParameters['consumerShippingMethod'] = 'other_address_delivery';
+$requestParameters['consumerShippingAddressFirstUseDate'] = '13.04.2020';
+
+$requestParameters['sourceOrderNumber'] = 5344534;
+
+$requestParameters['consumerUserAgent'] = "no user agent";
+$requestParameters['consumerIpAddress'] = "127.0.0.1";
+
 // sets request parameters regarding confirmations of orders
-$requestParameters["confirmUrl"] = getBaseUrl() . "confirm.php";
+//$requestParameters["confirmUrl"] = getBaseUrl() . "confirm.php";
 // $requestParameters["confirmMail"] = "set.your@mail-address.com"; // not used because of using confirmUrl
 
 // sets request parameters regarding the user interface
 $requestParameters["language"] = "en";
 $requestParameters["displayText"] = "Thank you very much for your order.";
-$requestParameters["imageUrl"] = getBaseUrl() . "ui/logo.png";
+//$requestParameters["imageUrl"] = getBaseUrl() . "ui/logo.png";
 // $requestParameters["layout"] = "smartphone"; // "desktop", "tablet" or "smartphone" are valid values
 // $requestParameters["paymentTypeSortOrder"] = "CCARD,ELV,EPS,SOFORTUEBERWEISUNG,INVOICE,INSTALLMENT,PAYPAL";
-
-// sets your custom request parameters
-$requestParameters["shopname_customParameter1"] = "your first custom parameter";
-$requestParameters["shopname_customParameter2"] = "your second custom parameter";
 
 // Sets always at last the request paramters regarding security,
 // because these uses values of the above defined request parameters.
@@ -65,7 +92,7 @@ $requestParameters["requestFingerprint"] = getRequestFingerprint($requestParamet
 <body>
 <h1>Wirecard Checkout Page Demo</h1>
 
-<form action="https://checkout.wirecard.com/page/init.php" method="post" name="form">
+<form action="http://d-wdcee-stk01.wirecard.sys/page/init.php" method="post" name="form">
     <?php
     // adds the request parameters as hidden form fields to this form
     foreach ($requestParameters as $key => $value) {
@@ -90,7 +117,12 @@ $requestParameters["requestFingerprint"] = getRequestFingerprint($requestParamet
                     <?php
                     // adds the list of activated payment types as options to the drop-down field
                     foreach ($paymentTypes as $key => $value) {
-                        echo "<option value='$key'>$value</option>\n";
+                        if($key === 'CCARD') {
+                            $selected = 'selected="selected"';
+                        } else {
+                            $selected = '';
+                        }
+                        echo "<option value='$key' $selected>$value</option>\n";
                     }
                     ?>
                 </select>
