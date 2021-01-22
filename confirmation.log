@@ -1,18 +1,20 @@
-2014-04-10 09:22:43 The checkout process has been successfully finished.
-  Wirecard Checkout Page returned the following response parameters:
+2021-01-22 16:49:14 The checkout process has been successfully finished.
+  QPay Checkout Page returned the following response parameters:
   amount = 99.99
   currency = EUR
-  paymentType = TRUSTLY
-  financialInstitution = TRUSTLY
+  paymentType = POLI
+  financialInstitution = POLi
   language = en
-  orderNumber = 6608774
+  orderNumber = 8022169
   paymentState = SUCCESS
   shopname_customParameter1 = your first custom parameter
   shopname_customParameter2 = your second custom parameter
-  gatewayReferenceNumber = DGW_6608774_RN
+  gatewayReferenceNumber = DGW_8022169_RN
   gatewayContractNumber = DemoContractNumber123
   avsResponseCode = X
   avsResponseMessage = Demo AVS ResultMessage
-  responseFingerprintOrder = amount,currency,paymentType,financialInstitution,language,orderNumber,paymentState,shopname_customParameter1,shopname_customParameter2,gatewayReferenceNumber,gatewayContractNumber,avsResponseCode,avsResponseMessage,secret,responseFingerprintOrder
-  responseFingerprint = 6e1bb046e7d03e2d105c7bce4009e406
+  avsProviderResultCode = X
+  avsProviderResultMessage = Demo AVS ProviderResultMessage
+  responseFingerprintOrder = amount,currency,paymentType,financialInstitution,language,orderNumber,paymentState,shopname_customParameter1,shopname_customParameter2,gatewayReferenceNumber,gatewayContractNumber,avsResponseCode,avsResponseMessage,avsProviderResultCode,avsProviderResultMessage,secret,responseFingerprintOrder
+  responseFingerprint = 2c5be275093b7c50f42177a1c11950bf845e71052f3519d0af41b3e7fc75c782f0cae0bfb78b274e2acd93db5ca67b7995d880d68d73a843b2461e7f2e4ece8e
 

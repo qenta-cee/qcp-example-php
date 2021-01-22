@@ -1,32 +1,30 @@
 <?php
-//--------------------------------------------------------------------------------//
-//                                                                                //
-// Wirecard Central Eastern Europe GmbH                                           //
-// www.wirecard.at                                                                //
-//                                                                                //
-// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY         //
-// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE            //
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A                     //
-// PARTICULAR PURPOSE.                                                            //
-//                                                                                //
-//--------------------------------------------------------------------------------//
+/**
+ * QPay Checkout Page Demo
+ * - Terms of use can be found under
+ * https://guides.qenta.com/prerequisites
+ * - License can be found under:
+ * https://github.com/qenta-cee/qcp-example-php/blob/master/LICENSE.
+ */
+require_once 'includes/function.inc.php';
 
-require_once("includes/config.inc.php");
-require_once("includes/function.inc.php");
+require_once 'includes/config.inc.php';
 
-$message = handleCheckoutResult($_POST, $shop["secret"]);
+$message = handleCheckoutResult($_POST, $shop['secret']);
 ?>
 <html>
 <head>
-    <title>Wirecard Checkout Page Demo</title>
+    <title>QPay Checkout Page Demo</title>
     <link rel="stylesheet" type="text/css" href="ui/styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ucf2gvc.css">
 </head>
 <body>
-<h1>Wirecard Checkout Page Demo</h1>
+<div id="content">
+<h1>QPay Checkout Page Demo</h1>
 
-<p>
+<p class="main">
     This is a simple return page for demonstration purposes only.
-    It displays the result of the Wirecard Checkout Page based on
+    It displays the result of the QPay Checkout Page based on
     the actions taken by the consumer within the checkout process.
 </p>
 
@@ -50,24 +48,28 @@ and take appropiate actions.
 </p>
 <p>
     The result of this checkout is:<br>
-<center><big><b><i><?php echo $message ?></i></b></center>
+<center><big><b><i><?php echo $message; ?></i></b></center>
 </big></center>
 </p>
 
-<p>The Wirecard Checkout Page returned the following response parameters:</p>
+<p>The QPay Checkout Page returned the following response parameters:</p>
 
-<table border="1" bordercolor="lightgray" cellpadding="10" cellspacing="0">
+<table class="payload" style="display: table" border="1" bordercolor="lightgray" cellpadding="10" cellspacing="0">
     <?php
     foreach ($_POST as $key => $value) {
-        if (strcasecmp($key, "submit_x") == 0 || strcasecmp($key, "submit_y") == 0) {
+        if (0 == strcasecmp($key, 'submit_x') || 0 == strcasecmp($key, 'submit_y')) {
             // noop
         } else {
-            echo "<tr><td align='right'><b>" . $key . "</b></td>";
-            echo "<td>" . $value . "</td></tr>\n";
+            echo "<tr><td align='right'><b>".$key.'</b></td>';
+            echo '<td>'.$value."</td></tr>\n";
         }
     }
     ?>
 </table>
-<p><a href="index.php">Start a new Checkout</a></p>
+<p>
+<input type="button" onclick="window.location='/';" value="Start a new Checkout" />
+</p>
+</div>
+<footer></footer>
 </body>
 </html>

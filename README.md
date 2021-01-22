@@ -1,19 +1,19 @@
-# Wirecard Checkout Page integration example
+# QPay Checkout Page integration example
 
-[![License](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/wirecard/wcp-example-php/master/LICENSE)
-[![PHP v5.3](https://img.shields.io/badge/php-v5.3-yellow.svg)](http://www.php.net)
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/qenta-cee/qcp-example-php/master/LICENSE)
+[![PHP v5.3](https://img.shields.io/badge/php-v5.3-green.svg)](https://www.php.net)
 
-An example implementation for Wirecard Checkout Page in PHP.
+An example implementation for QPay Checkout Page in PHP.
 
-This example demonstrates the integration principle of Wirecard Checkout Page and provides a basis for integration into PHP-based systems.
+This example demonstrates the integration principle of QPay Checkout Page and provides a basis for integration into PHP-based systems.
 
-Wirecard Checkout Page is the perfectly suited payment page for your online shop as it supports all popular payment methods. Offering an intuitive user interface, your consumers can conveniently select their preferred payment method and effect their payments in real time while respecting all security standards.
+QPay Checkout Page is the perfectly suited payment page for your online shop as it supports all popular payment methods. Offering an intuitive user interface, your consumers can conveniently select their preferred payment method and effect their payments in real time while respecting all security standards.
 
 ## Installation
 
-Copy the example code to a web server which supports PHP. Ensure that the web server is accessible from the Internet via port 80 (for http communication) or port 443 (for https communication). The web server needs a fully qualified domain name for receiving data from Wirecard e.g. payment confirmations.
+Copy the example code to a web server which supports PHP. Ensure that the web server is accessible from the Internet via port 80 (for http communication) or port 443 (for https communication, recommended). The web server needs a fully qualified domain name for receiving data from QENTA e.g. payment confirmations.
 
-Our [Online Guides](https://guides.wirecard.at/ "Online Guides") provide an in depth description of [Wirecard Checkout Page](https://guides.wirecard.at/wcp:start "Wirecard Checkout Page").
+Our [Online Guides](https://guides.qenta.com/ "Online Guides") provide an in depth description of [QPay Checkout Page](https://guides.qenta.com/qcp/start "QPay Checkout Page").
 
 
 ## Relevant files
@@ -35,20 +35,20 @@ After closing the contract change the specific parameters you received from our 
 
 *File: [index.php](index.php)*
 
-The required and optional request parameters used for the specific payment process are defined in a different file. Please have a look at [[:request_parameters|Request parameters]] for more details on the parameters which can be defined. These parameters are then used as hidden fields in the HTML-form which is presented to the consumer of your online shop. 
+The required and optional request parameters used for the specific payment process are defined in a different file. Please have a look at [Request Parameters](https://guides.qenta.com/request_parameters) for more details on the parameters which can be defined. These parameters are then used as hidden fields in the HTML-form which is presented to the consumer of your online shop. 
 
-Your consumer may then select one of the offered payment methods and start the payment process by submitting the values to Wirecard Checkout Page. If all required parameters are set and the fingerprint is verified, the payment process is started and your consumer is guided through the process.
+Your consumer may then select one of the offered payment methods and start the payment process by submitting the values to QPay Checkout Page. If all required parameters are set and the fingerprint is verified, the payment process is started and your consumer is guided through the process.
 
 
 ### Receiving and storing the payment process result
 
 *File: [return.php](return.php)*
 
-The PHP file for receiving and storing the result of the payment process for your online shop is called by Wirecard Checkout Page. We strongly recommend that you use the possibility to set the optional request parameter `confirmUrl` so that you are able to store the result independently of the behavior of your consumer during the redirect to the `successUrl`, `cancelUrl`, `pendingUrl` or `failureUrl`.
+The PHP file for receiving and storing the result of the payment process for your online shop is called by QPay Checkout Page. We strongly recommend that you use the possibility to set the optional request parameter `confirmUrl` so that you are able to store the result independently of the behavior of your consumer during the redirect to the `successUrl`, `cancelUrl`, `pendingUrl` or `failureUrl`.
 
 *File: [confirm.php](confirm.php)*
 
-The `confirmUrl` is called by Wirecard informing your online shop about the result of the payment process.
+The `confirmUrl` is called by QENTA informing your online shop about the result of the payment process.
 
 This file consists of the following functional steps:
 * Including the previously created and already used configuration file.
@@ -66,5 +66,5 @@ You may also use the additional files in the example package for testing purpose
 
 File name | Description
 --- | ---
-[ui/logo.png](ui/logo.png)     | Your logo of your online shop which will be displayed on the Wirecard Checkout Page.
-[service.html](service.html)    | This HTML page is shown to your consumer, if your consumer clicks on your logo within Wirecard Checkout Page.
+[ui/logo.png](ui/logo.png)     | Your logo of your online shop which will be displayed on the QPay Checkout Page.
+[service.html](service.html)    | This HTML page is shown to your consumer, if your consumer clicks on your logo within QPay Checkout Page.
