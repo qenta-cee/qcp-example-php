@@ -1,7 +1,7 @@
 # QPay Checkout Page integration example
 
 [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/qenta-cee/qcp-example-php/master/LICENSE)
-[![PHP v5.3](https://img.shields.io/badge/php-v5.3-green.svg)](https://www.php.net)
+[![PHP v7.4](https://img.shields.io/badge/php-v7.4-green.svg)](https://www.php.net)
 
 An example implementation for QPay Checkout Page in PHP.
 
