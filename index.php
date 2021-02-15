@@ -21,6 +21,16 @@ $requestParameters['orderDescription'] = 'Jane Doe (33562), Order: ' . $shop["or
 $requestParameters['customerStatement'] = 'Your Shopname: Order: ' . $shop["orderNumber"];
 $requestParameters['orderReference'] = $shop["orderNumber"];
 
+//Required request parameters regarding 3DS Secure 2 https://guides.qenta.com/payment_methods/3dsecure2/start/
+$requestParameters["consumerBillingFirstname"] = "John";
+$requestParameters["consumerBillingLastname"] = "Doe";
+$requestParameters["consumerEmail"] = "test@test.com";
+
+//Required request parameters regarding recur payment https://guides.qenta.com/payment_methods/3dsecure2/start/#3ds2UseCases
+//$requestParameters["consumerChallengeIndicator"] = "04";
+//$requestParameters["merchantTokenizationFlag"] = "true";
+//$requestParameters["periodicType"] = "ucof";
+
 // sets request parameters regarding the handling of the transaction
 $requestParameters['duplicateRequestCheck'] = 'no';
 // $requestParameters["autoDeposit"] = "yes";
