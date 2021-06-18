@@ -1,0 +1,14 @@
+services:
+  web:
+    container_name: QCP-EXAMPLE-PHP
+    image: php:7.1-apache
+    ports: 
+      - 1380:80
+      - 1443:443
+    environment: 
+      - ENDPOINT=http://rhs-dev01.qenta.com/page/init.php
+      - CUSTOMER_ID=D200901
+      - SHOP_ID=
+      - SECRET=B8AKTPWBRMNBV455FG6M2DANE99WU2
+    volumes: 
+      - ./:/var/www/html

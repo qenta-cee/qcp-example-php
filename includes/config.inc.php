@@ -6,25 +6,26 @@
  * - License can be found under:
  * https://github.com/qenta-cee/qcp-example-php/blob/master/LICENSE.
  */
-$api['endpoint'] = 'https://api.qenta.com/page/init.php';
+$api['endpoint'] = getenv("ENDPOINT") ?: "https://api.qenta.com/page/init.php";
 $common['baseUrl'] = getBaseUrl();
 $shop['orderNumber'] = substr_replace(substr(str_shuffle(time()), 0, 10), '-', 7, 0);
 
 // sets your customerId
 //   For testing purposes please use "D200001" as value and for production
 //   please change to your personal customerId you will receive from QENTA.
-$shop['customerId'] = 'D200001';
+$shop['customerId'] = getenv("CUSTOMER_ID") ?: "D200001";
 
 // sets your shopId which is required, when you are using several
 // shops or shop-configurations within the same customerId
-$shop['shopId'] = '';
+$shop['shopId'] = getenv("SHOP_ID") ?: "";
 
 // sets your personal pre-shared key
 // PLEASE NEVER SEND THS KEY BY EMAIL OR AS POST-PARAMETER IN A FORM!
 //   For testing purposes please use "B8AKTPWBRMNBV455FG6M2DANE99WU2" as value
 //   and for production please change to your personal secret you will
 //   receive from QENTA.
-$shop['secret'] = 'B8AKTPWBRMNBV455FG6M2DANE99WU2';
+$shop['secret'] = getenv("SECRET") ?: "B8AKTPWBRMNBV455FG6M2DANE99WU2";
+
 
 // sets the list of activated payment types for your shop
 //   For testing purposes you are able to use all of these payment types,
