@@ -1,0 +1,17 @@
+version: '2'
+services:
+  app:
+    container_name: qcp_example_php
+    image: webdevops/php-apache-dev:7.4-alpine
+    ports:
+      - "8000:80"
+      - "1443:443"
+    volumes:
+      - ./:/app/
+    environment:
+      - API_ENDPOINT=${API_ENDPOINT}
+      - COMMON_BASEURL=${COMMON_BASEURL}
+      - SHOP_ORDER_NUMBER=${SHOP_ORDERNUMBER}
+      - SHOP_CUSTOMER_ID=${SHOP_CUSTOMER_ID}
+      - SHOP_ID=${SHOP_ID}
+      - SHOP_SECRET=${SHOP_SECRET}   
