@@ -1,2 +1,2 @@
-.idea/
-mytest.sh
+.gitignore
+.dccache

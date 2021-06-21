@@ -1,0 +1,17 @@
+version: '2'
+services:
+  app:
+    container_name: qcp_example_php
+    image: php:7-apache
+    ports:
+      - "8000:80"
+      - "1443:443"
+    volumes:
+      - ./:/var/www/html/
+    environment:
+      - QCP_ENDPOINT=${QCP_ENDPOINT}
+      - QCP_BASEURL=${QCP_BASEURL}
+      - QCP_ORDER_NUMBER=${QCP_ORDER_NUMBER}
+      - QCP_CUSTOMER_ID=${QCP_CUSTOMER_ID}
+      - QCP_SHOP_ID=${QCP_SHOP_ID}
+      - QCP_SHOP_SECRET=${QCP_SHOP_SECRET}
