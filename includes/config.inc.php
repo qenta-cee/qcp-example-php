@@ -24,7 +24,7 @@ $shop['shopId'] = getenv('QCP_SHOP_ID') ?: '';
 //   For testing purposes please use "B8AKTPWBRMNBV455FG6M2DANE99WU2" as value
 //   and for production please change to your personal secret you will
 //   receive from QENTA.
-$shop['secret'] = getenv('QCP_SECRET') ?: 'B8AKTPWBRMNBV455FG6M2DANE99WU2';
+$shop['secret'] = getenv('QCP_SHOP_SECRET') ?: 'B8AKTPWBRMNBV455FG6M2DANE99WU2';
 
 // sets the list of activated payment types for your shop
 //   For testing purposes you are able to use all of these payment types,

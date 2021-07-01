@@ -6,9 +6,9 @@
  * - License can be found under:
  * https://github.com/qenta-cee/qcp-example-php/blob/master/LICENSE.
  */
-require_once 'includes/config.inc.php';
 
 require_once 'includes/function.inc.php';
+require_once 'includes/config.inc.php';
 
 $message = handleCheckoutResult($_POST, $shop['secret']);
 
