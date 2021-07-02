@@ -26,6 +26,7 @@ You can find test cards and data for and information about those different modes
 - [TEST Mode](https://guides.qenta.com/wcp/test_mode/)
 - [DEMO Mode](https://guides.qenta.com/wcp/demo_mode/)
 
+You may override all default settings by changing the values in the respective dotenv files.
 ### Custom
 Copy the example code to a web server which supports PHP. Ensure that the web server is accessible from the Internet via port 80 (for http communication) or port 443 (for https communication, recommended). The web server needs a fully qualified domain name for receiving data from QENTA e.g. payment confirmations.
 
