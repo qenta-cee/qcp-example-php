@@ -42,13 +42,14 @@ function getRequestFingerprintOrder($theParams)
 // Returns the value for the request parameter "requestFingerprint".
 function getRequestFingerprint($theParams, $theSecret)
 {
+
     $ret = '';
     foreach ($theParams as $key => $value) {
-        $ret .= "{$value}";
+        $ret .= (string) $value;
     }
     $ret .= "{$theSecret}";
-
-    return hash_hmac('sha512', $ret, $theSecret);
+    $fingerprint = hash_hmac('sha512', $ret, $theSecret);
+    return $fingerprint;
 }
 
 //--------------------------------------------------------------------------------//
