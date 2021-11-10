@@ -18,13 +18,13 @@ $shop['customerId'] = getenv('QCP_CUSTOMER_ID') ?: 'D200001';
 // sets your shopId which is required, when you are using several
 // shops or shop-configurations within the same customerId
 $shop['shopId'] = getenv('QCP_SHOP_ID') ?: '';
-
+$withBasket = getenv('QCP_INCLUDE_BASKET') ?: true;
 // sets your personal pre-shared key
 // PLEASE NEVER SEND THS KEY BY EMAIL OR AS POST-PARAMETER IN A FORM!
 //   For testing purposes please use "B8AKTPWBRMNBV455FG6M2DANE99WU2" as value
 //   and for production please change to your personal secret you will
 //   receive from QENTA.
-$shop['secret'] = getenv('QCP_SECRET') ?: 'B8AKTPWBRMNBV455FG6M2DANE99WU2';
+$shop['secret'] = getenv('QCP_SHOP_SECRET') ?: 'B8AKTPWBRMNBV455FG6M2DANE99WU2';
 
 // sets the list of activated payment types for your shop
 //   For testing purposes you are able to use all of these payment types,
@@ -43,3 +43,4 @@ $paymentTypes['PRZELEWY24'] = 'Przelewy24';
 $paymentTypes['PSC'] = 'Paysafecard';
 $paymentTypes['SEPA-DD'] = 'SEPA Direct Debit';
 $paymentTypes['SOFORTUEBERWEISUNG'] = 'SOFORT';
+$paymentTypes['AFTERPAY'] = 'AFTERPAY';
