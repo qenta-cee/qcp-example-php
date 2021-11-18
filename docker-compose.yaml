@@ -1,0 +1,14 @@
+services:
+  web:
+    container_name: QCP-EXAMPLE-PHP
+    image: php:7.1-apache
+    ports: 
+      - 1380:80
+      - 1443:443
+    environment: 
+      - ENDPOINT=${ENDPOINT}
+      - CUSTOMER_ID=${CUSTOMER_ID}
+      - SHOP_ID=${SHOP_ID}
+      - SECRET=${SECRET}
+    volumes: 
+      - ./:/var/www/html

@@ -11,14 +11,14 @@ $common['baseUrl'] = getenv('QCP_BASEURL') ?: getBaseUrl();
 $shop['orderNumber'] = getenv('QCP_ORDER_NUMBER') ?: substr_replace(substr(str_shuffle(time()), 0, 10), '-', 7, 0);
 
 // sets your customerId
-//   For testing purposes please use "D200001" as value and for production
+//   For testing purposes please use "D20git l0001" as value and for production
 //   please change to your personal customerId you will receive from QENTA.
 $shop['customerId'] = getenv('QCP_CUSTOMER_ID') ?: 'D200001';
 
 // sets your shopId which is required, when you are using several
 // shops or shop-configurations within the same customerId
 $shop['shopId'] = getenv('QCP_SHOP_ID') ?: '';
-
+$withBasket = getenv('QCP_INCLUDE_BASKET') ?: true;
 // sets your personal pre-shared key
 // PLEASE NEVER SEND THS KEY BY EMAIL OR AS POST-PARAMETER IN A FORM!
 //   For testing purposes please use "B8AKTPWBRMNBV455FG6M2DANE99WU2" as value
@@ -43,3 +43,4 @@ $paymentTypes['PRZELEWY24'] = 'Przelewy24';
 $paymentTypes['PSC'] = 'Paysafecard';
 $paymentTypes['SEPA-DD'] = 'SEPA Direct Debit';
 $paymentTypes['SOFORTUEBERWEISUNG'] = 'SOFORT';
+$paymentTypes['AFTERPAY'] = 'AFTERPAY';
