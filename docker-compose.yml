@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     container_name: qcp_example_php
-    image: php:7-apache
+    build: docker
     ports:
       - "8000:80"
       - "1443:443"
