@@ -3,14 +3,31 @@
 [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/qenta-cee/qcp-example-php/master/LICENSE)
 [![PHP v7.4](https://img.shields.io/badge/php-v7.4-green.svg)](https://www.php.net)
 
-An example implementation for QPay Checkout Page in PHP.
+An example implementation for QPAY Checkout Page in PHP.
 
 This example demonstrates the integration principle of QPay Checkout Page and provides a basis for integration into PHP-based systems.
 
-QPay Checkout Page is the perfectly suited payment page for your online shop as it supports all popular payment methods. Offering an intuitive user interface, your consumers can conveniently select their preferred payment method and effect their payments in real time while respecting all security standards.
+QPAY Checkout Page is the perfectly suited payment page for your online shop as it supports all popular payment methods. Offering an intuitive user interface, your consumers can conveniently select their preferred payment method and effect their payments in real time while respecting all security standards.
 
 ## Installation
 
+The QPAY Checkout Page example requires a webserver with php support and must be externally reachable to receive confirmation requests from our payment API.
+
+### Docker + ngrok (recommended)
+
+1. `git clone https://github.com/qenta-cee/qcp-example-php`
+2. `docker-compose --env-file `**`.env.demo`**` up`
+3. `ngrok http http://localhost:8000`
+
+There are two dotenv files with preconfigured defaults, `.env.demo` for DEMO mode and `.env.test` for TEST mode.
+
+You can find test cards and data for and information about those different modes in [QENTA Online Guides](https://guides.qenta.com):
+
+- [TEST Mode](https://guides.qenta.com/wcp/test_mode/)
+- [DEMO Mode](https://guides.qenta.com/wcp/demo_mode/)
+
+You may override all default settings by changing the values in the respective dotenv files.
+### Custom
 Copy the example code to a web server which supports PHP. Ensure that the web server is accessible from the Internet via port 80 (for http communication) or port 443 (for https communication, recommended). The web server needs a fully qualified domain name for receiving data from QENTA e.g. payment confirmations.
 
 Our [Online Guides](https://guides.qenta.com/ "Online Guides") provide an in depth description of [QPay Checkout Page](https://guides.qenta.com/qcp/start "QPay Checkout Page").
