@@ -44,3 +44,4 @@ $paymentTypes['PSC'] = 'Paysafecard';
 $paymentTypes['SEPA-DD'] = 'SEPA Direct Debit';
 $paymentTypes['SOFORTUEBERWEISUNG'] = 'SOFORT';
 $paymentTypes['AFTERPAY'] = 'AFTERPAY';
+$paymentTypes['CRYPTO'] = 'CRYPTO';
