@@ -2,7 +2,7 @@
 /**
  * QPay Checkout Page Demo
  * - Terms of use can be found under
- * https://guides.qenta.com/prerequisites
+ * https://guides.qenta.com/
  * - License can be found under:
  * https://github.com/qenta-cee/qcp-example-php/blob/master/LICENSE.
  */
@@ -99,7 +99,11 @@ $requestParameters['requestFingerprint'] = getRequestFingerprint($requestParamet
                     <?php
                     // adds the list of activated payment types as options to the drop-down field
                     foreach ($paymentTypes as $key => $value) {
-                        echo "<option value='{$key}'>{$value}</option>\n";
+                        $selected = '';
+                        if ('CCARD' === $key) {
+                            $selected = 'selected';
+                        }
+                        echo "<option value='{$key}'{$selected}>{$value}</option>\n";
                     }
                     ?>
                 </select>
