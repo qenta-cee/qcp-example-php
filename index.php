@@ -17,7 +17,7 @@ $requestParameters['shopId'] = $shop['shopId'];
 // sets request parameters regarding the order
 $requestParameters['amount'] = '99.99';
 $requestParameters['currency'] = 'EUR';
-$requestParameters['orderDescription'] = 'Jane Doe (33562), Order: ' . $shop["orderNumber"];
+$requestParameters['orderDescription'] = 'Test:0000';
 $requestParameters['customerStatement'] = 'Your Shopname: Order: ' . $shop["orderNumber"];
 $requestParameters['orderReference'] = $shop["orderNumber"];
 
