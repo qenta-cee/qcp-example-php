@@ -17,7 +17,6 @@ $requestParameters['shopId'] = $shop['shopId'];
 // sets request parameters regarding the order
 $requestParameters['amount'] = '99.99';
 $requestParameters['currency'] = 'EUR';
-$requestParameters['orderDescription'] = 'Test:0000';
 $requestParameters['customerStatement'] = 'Your Shopname: Order: ' . $shop["orderNumber"];
 $requestParameters['orderReference'] = $shop["orderNumber"];
 
@@ -25,6 +24,8 @@ $requestParameters['orderReference'] = $shop["orderNumber"];
 $requestParameters["consumerBillingFirstname"] = "John";
 $requestParameters["consumerBillingLastname"] = "Doe";
 $requestParameters["consumerEmail"] = "test@test.com";
+
+$requestParameters["consumerMerchantCrmId"] = "TESTMERCHANT1234";
 
 //Required request parameters regarding recur payment https://guides.qenta.com/payment_methods/3dsecure2/start/#3ds2UseCases
 //$requestParameters["consumerChallengeIndicator"] = "04";
@@ -58,10 +59,6 @@ $requestParameters['imageUrl'] = $common["baseUrl"].'ui/logo.png';
 $requestParameters['shopname_customParameter1'] = 'your first custom parameter';
 $requestParameters['shopname_customParameter2'] = 'your second custom parameter';
 
-// Sets always at last the request paramters regarding security,
-// because these uses values of the above defined request parameters.
-$requestParameters['requestFingerprintOrder'] = getRequestFingerprintOrder($requestParameters);
-$requestParameters['requestFingerprint'] = getRequestFingerprint($requestParameters, $shop['secret']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +71,7 @@ $requestParameters['requestFingerprint'] = getRequestFingerprint($requestParamet
 <div id="content">
 <h1>QPay Checkout Page Demo</h1>
 
-<form action="<?php echo $api["endpoint"] ?>" method="post" name="form" id="checkoutForm">
+<form action="init.php" method="post" name="form" id="checkoutForm">
     <?php
     // adds the request parameters as hidden form fields to this form
     foreach ($requestParameters as $key => $value) {
@@ -86,7 +83,12 @@ $requestParameters['requestFingerprint'] = getRequestFingerprint($requestParamet
     <table id="qcpTable" border="1" bordercolor="lightgray" cellpadding="10" cellspacing="0">
         <tr>
             <td align="right"><b>Order description</b></td>
-            <td><?php echo $requestParameters['orderDescription']; ?></td>
+            <td>
+                <select type="text" name="orderDescription" id="selectOrderDescription">
+                  <option value='Test:0000'>Test:0000 (only for Credit Card)</option>
+                  <option value='My Order' selected>My Order</option>
+                </select>
+              </td>
         </tr>
         <tr>
             <td align="right"><b>Amount</b></td>
@@ -95,18 +97,24 @@ $requestParameters['requestFingerprint'] = getRequestFingerprint($requestParamet
         <tr>
             <td align="right"><b>Payment type</b></td>
             <td>
-                <select name="paymenttype">
+                <select name="paymenttype" id="selectPaymentType">
                     <?php
                     // adds the list of activated payment types as options to the drop-down field
                     foreach ($paymentTypes as $key => $value) {
                         $selected = '';
-                        if ('CCARD' === $key) {
-                            $selected = 'selected';
-                        }
                         echo "<option value='{$key}'{$selected}>{$value}</option>\n";
                     }
                     ?>
                 </select>
+                <script type="text/javascript">
+                  document.getElementById('selectPaymentType').addEventListener('change', function() {
+                    if(this.value == 'CCARD') {
+                      document.getElementById('selectOrderDescription').value = 'Test:0000';
+                    } else if(this.value != 'SELECT') {
+                      document.getElementById('selectOrderDescription').value = 'My Order';
+                    }
+                  })
+                </script>
             </td>
         </tr>
         <tr>

@@ -30,7 +30,7 @@ $shop['secret'] = getenv('QCP_SHOP_SECRET') ?: 'B8AKTPWBRMNBV455FG6M2DANE99WU2';
 //   For testing purposes you are able to use all of these payment types,
 //   in production please use only that payment types you ordered via QENTA.
 $paymentTypes['SELECT'] = 'Choose later on Payment Page';
-// $paymentTypes['AFTERPAY'] = 'AfterPay';
+$paymentTypes['AFTERPAY'] = 'AfterPay';
 $paymentTypes['CCARD'] = 'Credit Card';
 // $paymentTypes["CCARD-MOTO"] = "Credit Card Mail Order, Telephone Order";
 $paymentTypes['EPS'] = 'EPS';
@@ -39,6 +39,6 @@ $paymentTypes['INVOICE'] = 'Invoice';
 $paymentTypes['PAYPAL'] = 'PayPal';
 $paymentTypes['PRZELEWY24'] = 'Przelewy24';
 $paymentTypes['PSC'] = 'Paysafecard';
-// $paymentTypes['CRYPTO'] = 'Salamantex';
+$paymentTypes['CRYPTO'] = 'Salamantex';
 $paymentTypes['SEPA-DD'] = 'SEPA Direct Debit';
 $paymentTypes['SOFORTUEBERWEISUNG'] = 'Sofort Klarna';

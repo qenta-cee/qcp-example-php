@@ -20,6 +20,11 @@ body {
 	min-height: 100vh;
 }
 
+#btnInitiateCheckout {
+  width: 14rem;
+  height: 4rem;
+}
+
 p.main {
 	font-size: 1.5em;
 }
@@ -50,6 +55,7 @@ a {
 
 select {
 	font-size: inherit;
+  width: 100%;
 }
 
 footer {
