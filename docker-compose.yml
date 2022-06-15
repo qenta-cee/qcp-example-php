@@ -4,7 +4,7 @@ services:
     container_name: qcp_example_php
     image: php:7-apache
     ports:
-      - "8001:80"
+      - "${QCP_EXAMPLE_PORT:-8001}:80"
       - "1443:443"
     volumes:
       - ./:/var/www/html/
