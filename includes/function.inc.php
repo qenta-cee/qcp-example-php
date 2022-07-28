@@ -3,7 +3,7 @@
 /**
  * QPay Checkout Page Demo
  * - Terms of use can be found under
- * https://guides.qenta.com/prerequisites
+ * https://guides.qenta.com/
  * - License can be found under:
  * https://github.com/qenta-cee/qcp-example-php/blob/master/LICENSE.
  */
@@ -42,7 +42,6 @@ function getRequestFingerprintOrder($theParams)
 // Returns the value for the request parameter "requestFingerprint".
 function getRequestFingerprint($theParams, $theSecret)
 {
-
     $ret = '';
     foreach ($theParams as $key => $value) {
         $ret .= (string) $value;

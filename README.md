@@ -16,21 +16,21 @@ The QPAY Checkout Page example requires a webserver with php support and must be
 ### Docker + ngrok (recommended)
 
 1. `git clone https://github.com/qenta-cee/qcp-example-php`
-2. `docker-compose --env-file `**`.env.demo`**` up`
-3. `ngrok http http://localhost:8000`
+2. `docker-compose --env-file `**`.env.demo`**` up; docker-compose down`
+3. `ngrok http http://localhost:8001`
 
 There are two dotenv files with preconfigured defaults, `.env.demo` for DEMO mode and `.env.test` for TEST mode.
 
 You can find test cards and data for and information about those different modes in [QENTA Online Guides](https://guides.qenta.com):
 
-- [TEST Mode](https://guides.qenta.com/wcp/test_mode/)
-- [DEMO Mode](https://guides.qenta.com/wcp/demo_mode/)
+- [TEST Mode](https://guides.qenta.com/demotest/test/)
+- [DEMO Mode](https://guides.qenta.com/demotest/demo/)
 
 You may override all default settings by changing the values in the respective dotenv files.
-### Custom
+### Server or VPS
 Copy the example code to a web server which supports PHP. Ensure that the web server is accessible from the Internet via port 80 (for http communication) or port 443 (for https communication, recommended). The web server needs a fully qualified domain name for receiving data from QENTA e.g. payment confirmations.
 
-Our [Online Guides](https://guides.qenta.com/ "Online Guides") provide an in depth description of [QPay Checkout Page](https://guides.qenta.com/qcp/start "QPay Checkout Page").
+Our [Online Guides](https://guides.qenta.com/ "Online Guides") provide an in depth description of [QPay Checkout Page](https://guides.qenta.com/products/page/ "QPay Checkout Page").
 
 
 ## Relevant files
@@ -52,7 +52,7 @@ After closing the contract change the specific parameters you received from our 
 
 *File: [index.php](index.php)*
 
-The required and optional request parameters used for the specific payment process are defined in a different file. Please have a look at [Request Parameters](https://guides.qenta.com/request_parameters) for more details on the parameters which can be defined. These parameters are then used as hidden fields in the HTML-form which is presented to the consumer of your online shop. 
+The required and optional request parameters used for the specific payment process are defined in a different file. Please have a look at [Request Parameters](https://guides.qenta.com/parameters/frontend/request-parameters/) for more details on the parameters which can be defined. These parameters are then used as hidden fields in the HTML-form which is presented to the consumer of your online shop. 
 
 Your consumer may then select one of the offered payment methods and start the payment process by submitting the values to QPay Checkout Page. If all required parameters are set and the fingerprint is verified, the payment process is started and your consumer is guided through the process.
 

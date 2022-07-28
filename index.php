@@ -2,7 +2,7 @@
 /**
  * QPay Checkout Page Demo
  * - Terms of use can be found under
- * https://guides.qenta.com/prerequisites
+ * https://guides.qenta.com/
  * - License can be found under:
  * https://github.com/qenta-cee/qcp-example-php/blob/master/LICENSE.
  */
@@ -18,7 +18,7 @@ $requestParameters['shopId'] = $shop['shopId'];
 // 999.99 25.74
 $requestParameters['amount'] = '25.74';
 $requestParameters['currency'] = 'EUR';
-$requestParameters['orderDescription'] = 'ABC123';
+$requestParameters['orderDescription'] = 'Test:0000';
 $requestParameters['customerStatement'] = 'Your Shopname: Order: ' . $shop["orderNumber"];
 $requestParameters['orderReference'] = $shop["orderNumber"];
 
@@ -30,7 +30,7 @@ $requestParameters['consumerBillingCity'] = 'Graz';
 $requestParameters['consumerBillingZipCode'] = '8020';
 $requestParameters['consumerBillingCountry'] = 'AT';
 
-if($withBasket){
+if ($withBasket) {
     $requestParameters['basketItems'] = '2';
 
     $requestParameters['basketItem1ArticleNumber'] = 'A001';
@@ -138,7 +138,11 @@ $requestParameters['requestFingerprint'] = getRequestFingerprint($requestParamet
                     <?php
                     // adds the list of activated payment types as options to the drop-down field
                     foreach ($paymentTypes as $key => $value) {
-                        echo "<option value='{$key}'>{$value}</option>\n";
+                        $selected = '';
+                        if ('CCARD' === $key) {
+                            $selected = 'selected';
+                        }
+                        echo "<option value='{$key}'{$selected}>{$value}</option>\n";
                     }
                     ?>
                 </select>

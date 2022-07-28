@@ -2,7 +2,7 @@
 /**
  * QPay Checkout Page Demo
  * - Terms of use can be found under
- * https://guides.qenta.com/prerequisites
+ * https://guides.qenta.com/
  * - License can be found under:
  * https://github.com/qenta-cee/qcp-example-php/blob/master/LICENSE.
  */
@@ -29,18 +29,17 @@ $shop['secret'] = getenv('QCP_SHOP_SECRET') ?: 'B8AKTPWBRMNBV455FG6M2DANE99WU2';
 // sets the list of activated payment types for your shop
 //   For testing purposes you are able to use all of these payment types,
 //   in production please use only that payment types you ordered via QENTA.
-$paymentTypes['SELECT'] = 'Select within QPay Payment Page';
+$paymentTypes['SELECT'] = 'Choose later on Payment Page';
+// $paymentTypes['AFTERPAY'] = 'AfterPay';
 $paymentTypes['CCARD'] = 'Credit Card';
 // $paymentTypes["CCARD-MOTO"] = "Credit Card Mail Order, Telephone Order";
 $paymentTypes['EPS'] = 'EPS';
-$paymentTypes['GIROPAY'] = 'giropay';
-$paymentTypes['IDL'] = 'iDEAL';
 $paymentTypes['INSTALLMENT'] = 'Installment';
 $paymentTypes['INVOICE'] = 'Invoice';
-$paymentTypes['MAESTRO'] = 'Maestro SecureCode';
 $paymentTypes['PAYPAL'] = 'PayPal';
 $paymentTypes['PRZELEWY24'] = 'Przelewy24';
 $paymentTypes['PSC'] = 'Paysafecard';
+// $paymentTypes['CRYPTO'] = 'Salamantex';
 $paymentTypes['SEPA-DD'] = 'SEPA Direct Debit';
 $paymentTypes['SOFORTUEBERWEISUNG'] = 'SOFORT';
 $paymentTypes['AFTERPAY'] = 'AFTERPAY';
