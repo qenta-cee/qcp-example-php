@@ -15,15 +15,54 @@ $requestParameters['customerId'] = $shop['customerId'];
 $requestParameters['shopId'] = $shop['shopId'];
 
 // sets request parameters regarding the order
-$requestParameters['amount'] = '99.99';
+// 999.99 25.74
+$requestParameters['amount'] = '25.74';
 $requestParameters['currency'] = 'EUR';
 $requestParameters['orderDescription'] = 'Test:0000';
 $requestParameters['customerStatement'] = 'Your Shopname: Order: ' . $shop["orderNumber"];
 $requestParameters['orderReference'] = $shop["orderNumber"];
 
+// Additional Afterpay parameters for
+$requestParameters['consumerBillingFirstName'] = 'QentaXYZ1';
+$requestParameters['consumerBillingLastName'] = 'QCP Example';
+$requestParameters['consumerBillingAddress1'] = 'Reininghausstrasse 10';
+$requestParameters['consumerBillingCity'] = 'Graz';
+$requestParameters['consumerBillingZipCode'] = '8020';
+$requestParameters['consumerBillingCountry'] = 'AT';
+
+if ($withBasket) {
+    $requestParameters['basketItems'] = '2';
+
+    $requestParameters['basketItem1ArticleNumber'] = 'A001';
+    $requestParameters['basketItem1Quantity'] = '1';
+    $requestParameters['basketItem1Name'] = 'Product A1';
+    $requestParameters['basketItem1Description'] = 'Product A1';
+    $requestParameters['basketItem1UnitGrossAmount'] = '10.80';
+    $requestParameters['basketItem1UnitNetAmount'] = '9.00';
+    $requestParameters['basketItem1UnitTaxAmount'] = '1.80';
+    $requestParameters['basketItem1UnitTaxRate'] = '20.000';
+
+    $requestParameters['basketItem2ArticleNumber'] = 'A002';
+    $requestParameters['basketItem2Quantity'] = '1';
+    $requestParameters['basketItem2Name'] = 'Product A2';
+    $requestParameters['basketItem2Description'] = 'Product A2';
+    $requestParameters['basketItem2UnitGrossAmount'] = '14.94';
+    $requestParameters['basketItem2UnitNetAmount'] = '12.45';
+    $requestParameters['basketItem2UnitTaxAmount'] = '2.49';
+    $requestParameters['basketItem2UnitTaxRate'] = '20.000';
+
+    // $requestParameters['basketItem3ArticleNumber'] = 'S001';
+    // $requestParameters['basketItem3Quantity'] = '1';
+    // $requestParameters['basketItem3Name'] = 'Shipping';
+    // $requestParameters['basketItem3UnitGrossAmount'] = '974.25';
+    // $requestParameters['basketItem3UnitNetAmount'] = '974.25';
+    // $requestParameters['basketItem3UnitTaxAmount'] = '0.00';
+    // $requestParameters['basketItem3UnitTaxRate'] = '0.000';
+}
+
 //Required request parameters regarding 3DS Secure 2 https://guides.qenta.com/payment_methods/3dsecure2/start/
-$requestParameters["consumerBillingFirstname"] = "John";
-$requestParameters["consumerBillingLastname"] = "Doe";
+// $requestParameters["consumerBillingFirstname"] = "";
+// $requestParameters["consumerBillingLastname"] = "";
 $requestParameters["consumerEmail"] = "test@test.com";
 
 //Required request parameters regarding recur payment https://guides.qenta.com/payment_methods/3dsecure2/start/#3ds2UseCases
@@ -46,7 +85,7 @@ $requestParameters['serviceUrl'] = $common["baseUrl"].'service.html';
 // sets request parameters regarding confirmations of orders
 $requestParameters['confirmUrl'] = $common["baseUrl"].'confirm.php';
 // $requestParameters["confirmMail"] = "set.your@mail-address.com"; // not used because of using confirmUrl
-
+$requestParameters['CONSUMERMERCHANTCRMID'] = '12345678';
 // sets request parameters regarding the user interface
 $requestParameters['language'] = 'en';
 $requestParameters['displayText'] = 'Thank you very much for your order.';
