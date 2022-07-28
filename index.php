@@ -18,7 +18,7 @@ $requestParameters['shopId'] = $shop['shopId'];
 // 999.99 25.74
 $requestParameters['amount'] = '25.74';
 $requestParameters['currency'] = 'EUR';
-$requestParameters['orderDescription'] = 'Test123';
+$requestParameters['orderDescription'] = 'ABC123';
 $requestParameters['customerStatement'] = 'Your Shopname: Order: ' . $shop["orderNumber"];
 $requestParameters['orderReference'] = $shop["orderNumber"];
 
@@ -85,7 +85,7 @@ $requestParameters['serviceUrl'] = $common["baseUrl"].'service.html';
 // sets request parameters regarding confirmations of orders
 $requestParameters['confirmUrl'] = $common["baseUrl"].'confirm.php';
 // $requestParameters["confirmMail"] = "set.your@mail-address.com"; // not used because of using confirmUrl
-$requestParameters['CONSUMER_MERCHANT_CRM_ID'] = '1234235346';
+$requestParameters['CONSUMERMERCHANTCRMID'] = '12345678';
 // sets request parameters regarding the user interface
 $requestParameters['language'] = 'en';
 $requestParameters['displayText'] = 'Thank you very much for your order.';
