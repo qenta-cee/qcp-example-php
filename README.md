@@ -3,35 +3,37 @@
 [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/qenta-cee/qcp-example-php/master/LICENSE)
 [![PHP v7.4](https://img.shields.io/badge/php-v7.4-green.svg)](https://www.php.net)
 
-An example implementation for QPAY Checkout Page in PHP.
+This example demonstrates the usage of QPAY Checkout Page and provides a basis for integration into PHP-based systems.
 
-This example demonstrates the integration principle of QPay Checkout Page and provides a basis for integration into PHP-based systems.
-
-QPAY Checkout Page is the perfectly suited payment page for your online shop as it supports all popular payment methods. Offering an intuitive user interface, your consumers can conveniently select their preferred payment method and effect their payments in real time while respecting all security standards.
+Our [Online Guides](https://guides.qenta.com/ "Online Guides") provide an in depth description of the [QPAY Checkout Page](https://guides.qenta.com/products/page/ "QPAY Checkout Page").
 
 ## Installation
 
-The QPAY Checkout Page example requires a webserver with php support and must be externally reachable to receive confirmation requests from our payment API.
+Copy the example code to a web server which supports PHP. Ensure that the web server is accessible from the Internet via port 80 (for http communication) or port 443 (for https communication). The web server needs a fully qualified domain name for receiving data from Qenta (e.g. payment confirmations).
 
-### Docker + ngrok (recommended)
+### Docker 
+Required: Docker _and_ [docker-compose](https://docs.docker.com/compose/install/)
 
-1. `git clone https://github.com/qenta-cee/qcp-example-php`
-2. `docker-compose --env-file `**`.env.demo`**` up; docker-compose down`
-3. `ngrok http http://localhost:8001`
+Recommended: [ngrok](https://ngrok.com)
 
-There are two dotenv files with preconfigured defaults, `.env.demo` for DEMO mode and `.env.test` for TEST mode.
+######  Demo Configuration
+Run ```docker-compose up``` to start the `qcp-example-php`  Application locally with our demo configuration.
 
-You can find test cards and data for and information about those different modes in [QENTA Online Guides](https://guides.qenta.com):
+######  Test Configuration
+The Repository features a `.env.example` File with our test configuration. The `qcp-example-php` Application can be started with our test configuration by running ```docker-compose --env-file .env.example up```.
 
-- [TEST Mode](https://guides.qenta.com/demotest/test/)
-- [DEMO Mode](https://guides.qenta.com/demotest/demo/)
+######  Custom Configuration
+In order to use the `qcp-example-php` Application with your own Qenta Configuration you need to run ```cp .env.example .env``` and change the corresponding values in the `.env` File with the values representing your Qenta Configuration. Afterwards a simple ```docker-compose up``` will start the `qcp-example-php` App with your Configuration.
 
-You may override all default settings by changing the values in the respective dotenv files.
-### Server or VPS
-Copy the example code to a web server which supports PHP. Ensure that the web server is accessible from the Internet via port 80 (for http communication) or port 443 (for https communication, recommended). The web server needs a fully qualified domain name for receiving data from QENTA e.g. payment confirmations.
 
-Our [Online Guides](https://guides.qenta.com/ "Online Guides") provide an in depth description of [QPay Checkout Page](https://guides.qenta.com/products/page/ "QPay Checkout Page").
+The webserver is accessible at `http://localhost:8000`.
 
+To receive a payment confirmation you need a FQDN. We recommend to use [ngrok](https://ngrok.com).
+Run `ngrok http http://localhost:8000` to get an externally reachable URL.
+
+## Support and additional information
+
+If you have any questions or troubles to get this example up and running in your web server environment, please do not hesitate to contact our [support teams](https://guides.qenta.com/contact "support teams").
 
 ## Relevant files
 
